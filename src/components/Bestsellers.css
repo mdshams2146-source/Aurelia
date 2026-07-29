@@ -1,0 +1,123 @@
+.bestsellers-section {
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.slider-container {
+  width: 100vw;
+  padding-left: 5vw;
+}
+
+.slider-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  padding-right: 5vw;
+}
+
+.product-card {
+  width: 450px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 300px;
+  }
+}
+
+.product-img-wrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.product-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  background: linear-gradient(to top, rgba(24, 24, 24, 0.6) 0%, rgba(24, 24, 24, 0) 100%);
+}
+
+.product-card:hover .product-actions {
+  transform: translateY(0);
+}
+
+.action-btn {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.add-cart-btn {
+  width: auto;
+  border-radius: 40px;
+  padding: 0 1.5rem;
+  gap: 0.5rem;
+}
+
+.add-cart-btn span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-meta {
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+}
+
+.product-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.product-price {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+}

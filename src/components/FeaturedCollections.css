@@ -1,0 +1,120 @@
+.collections-section {
+  background-color: var(--bg-primary);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--text-dark);
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.collection-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Asymmetrical grid layout */
+.collection-card:nth-child(1) { grid-column: span 5; }
+.collection-card:nth-child(2) { grid-column: span 7; margin-top: 10vh; }
+.collection-card:nth-child(3) { grid-column: 3 / span 8; margin-top: 5vh; }
+
+@media (max-width: 900px) {
+  .collection-card:nth-child(1),
+  .collection-card:nth-child(2),
+  .collection-card:nth-child(3) {
+    grid-column: span 12;
+    margin-top: 0;
+  }
+}
+
+.collection-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  margin-bottom: 1.5rem;
+}
+
+.collection-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.collection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(246, 242, 236, 0.2);
+  backdrop-filter: blur(0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.collection-card:hover .collection-overlay {
+  opacity: 1;
+  backdrop-filter: blur(4px);
+}
+
+.collection-card:hover .collection-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.explore-text {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: var(--bg-primary);
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  transform: translateY(20px);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.collection-card:hover .explore-text {
+  transform: translateY(0);
+}
+
+.collection-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.animated-underline {
+  width: 0;
+  height: 1px;
+  background-color: var(--text-dark);
+  transition: width 0.5s ease;
+}
+
+.collection-card:hover .animated-underline {
+  width: 100%;
+}

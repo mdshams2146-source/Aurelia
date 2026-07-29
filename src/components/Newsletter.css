@@ -1,0 +1,51 @@
+.newsletter-section {
+  background-color: var(--bg-primary);
+  text-align: center;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5rem 0;
+  border-top: 1px solid rgba(45, 43, 40, 0.1);
+  border-bottom: 1px solid rgba(45, 43, 40, 0.1);
+}
+
+.newsletter-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.input-group {
+  display: flex;
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 0.5rem;
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: var(--text-dark);
+  opacity: 0.5;
+}
+
+.input-group button {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.input-group button:hover {
+  opacity: 0.6;
+}

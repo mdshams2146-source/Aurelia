@@ -1,0 +1,150 @@
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(24, 24, 24, 0.4) 0%, rgba(24, 24, 24, 0.1) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 5vw;
+  margin-top: 5vh;
+}
+
+.hero-text {
+  max-width: 800px;
+  color: var(--bg-primary);
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-title .italic-text {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-buttons .btn-primary {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: transparent;
+  color: var(--bg-primary);
+  border: 1px solid var(--bg-primary);
+}
+
+.hero-buttons .btn-primary::before {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.hero-buttons .btn-secondary {
+  border-color: var(--bg-primary);
+  color: var(--bg-primary);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(246, 242, 236, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  animation: scrollAnim 2s infinite cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@keyframes scrollAnim {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
