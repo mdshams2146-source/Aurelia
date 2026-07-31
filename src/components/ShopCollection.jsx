@@ -4,8 +4,10 @@ import { Heart, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './ShopCollection.css';
 
-import prodSofa from '../assets/prod_sofa.png';
-import prodChair from '../assets/prod_chair.png';
+import prodSofa from '../assets/prod_sofa.jpg';
+import prodChair from '../assets/prod_chair.jpg';
+import prodAccentChair from '../assets/prod_accent_chair.jpg';
+import prodWingback from '../assets/prod_wingback.jpg';
 import lookbook1 from '../assets/lookbook1.png';
 import lookbook2 from '../assets/lookbook2.png';
 import bedroomImg from '../assets/bedroom.png';
@@ -20,10 +22,10 @@ const allShopItems = [
   { id: 106, name: 'The Siena Grand Sofa', price: '£4,200', oldPrice: null,      rating: 5,   reviews: 47,  image: heroImg,    tag: 'New',        category: 'Living Room' },
   { id: 107, name: 'Minimalist Side Table', price: '£620', oldPrice: '£740',     rating: 4.7, reviews: 155, image: lookbook1,  tag: 'Sale',       category: 'Living Room' },
   { id: 108, name: 'Walnut Bookshelf Unit', price: '£1,900', oldPrice: null,     rating: 4.8, reviews: 38,  image: lookbook2,  tag: null,         category: 'Office' },
-  { id: 109, name: 'Bouclé Accent Chair', price: '£980', oldPrice: null,         rating: 4.9, reviews: 73,  image: prodChair,  tag: 'New',        category: 'Bedroom' },
-  { id: 110, name: 'Travertine Coffee Table', price: '£1,650', oldPrice: null,   rating: 5,   reviews: 29,  image: lookbook1,  tag: null,         category: 'Living Room' },
-  { id: 111, name: 'Woven Rattan Daybed', price: '£2,100', oldPrice: '£2,500',   rating: 4.7, reviews: 61,  image: bedroomImg, tag: 'Sale',       category: 'Outdoor' },
-  { id: 112, name: 'Linen Wingback Chair', price: '£1,350', oldPrice: null,      rating: 4.9, reviews: 44,  image: prodSofa,   tag: null,         category: 'Living Room' },
+  { id: 109, name: 'Bouclé Accent Chair', price: '£980', oldPrice: null,         rating: 4.9, reviews: 73,  image: prodAccentChair, tag: 'New',   category: 'Bedroom' },
+  { id: 110, name: 'Travertine Coffee Table', price: '£1,650', oldPrice: null,   rating: 5,   reviews: 29,  image: lookbook1,       tag: null,    category: 'Living Room' },
+  { id: 111, name: 'Woven Rattan Daybed', price: '£2,100', oldPrice: '£2,500',   rating: 4.7, reviews: 61,  image: bedroomImg,      tag: 'Sale',  category: 'Outdoor' },
+  { id: 112, name: 'Linen Wingback Chair', price: '£1,350', oldPrice: null,      rating: 4.9, reviews: 44,  image: prodWingback,    tag: null,    category: 'Living Room' },
 ];
 
 const renderStars = (rating) => {
